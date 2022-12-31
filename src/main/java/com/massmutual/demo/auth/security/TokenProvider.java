@@ -22,13 +22,10 @@ import java.util.stream.Collectors;
 @Component
 public class TokenProvider implements Serializable {
 
-
     public static final long JWT_TOKEN_VALIDITY = 30 * 24 * 60 * 60;
-
 
     @Value("${token.secret}")
     private String secretKey;
-
 
     static final String AUTHORITIES_KEY = "scopes";
 
@@ -78,7 +75,6 @@ public class TokenProvider implements Serializable {
 
         if (!isTokenExpired(token) == false)
             throw new ServletException("Token Expired");
-
     }
 
     UsernamePasswordAuthenticationToken getAuthentication(final String token, final Authentication existingAuth, final UserDetails userDetails) {
@@ -88,8 +84,6 @@ public class TokenProvider implements Serializable {
         final Jws<Claims> claimsJws = jwtParser.parseClaimsJws(token);
 
         final Claims claims = claimsJws.getBody();
-
-
 
         log.info("claims" + claims.get(AUTHORITIES_KEY).toString());
         final Collection<? extends GrantedAuthority> authorities =

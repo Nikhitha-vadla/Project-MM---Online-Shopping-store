@@ -20,8 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/user/cart")
+@RequestMapping("/cart")
 public class CartController {
+
 	@Autowired
 	CartService service;
 	

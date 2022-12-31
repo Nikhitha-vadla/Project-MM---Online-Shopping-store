@@ -8,11 +8,11 @@
 		<version>2.3.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.capgemini</groupId>
-	<artifactId>Tutorial</artifactId>
+	<groupId>com.massmutual</groupId>
+	<artifactId>projectMM</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Tutorial</name>
-	<description>Demo project for Spring Boot</description>
+	<name>projectMM</name>
+	<description>Online shopping project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -83,63 +83,63 @@
 
     </dependencies>
 
-<!--	<build>-->
-<!--		<plugins>-->
-<!--			<plugin>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--        <configuration>-->
-<!--          <excludes>-->
-<!--            <exclude>-->
-<!--              <groupId>org.projectlombok</groupId>-->
-<!--              <artifactId>lombok</artifactId>-->
-<!--            </exclude>-->
-<!--          </excludes>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
-<!--		</plugins>-->
-<!--	</build>-->
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.5</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<!-- attached to Maven test phase -->
-					<execution>
-						<id>report</id>
-						<phase>test</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<addResources>true</addResources>
-					<mainClass>com.massmutual.demo.TutorialApplication</mainClass>
-					<layout>ZIP</layout>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+            </exclude>
+          </excludes>
+        </configuration>
+      </plugin>
 		</plugins>
 	</build>
+<!--	<build>-->
+<!--		<plugins>-->
+<!--			<plugin>-->
+<!--				<groupId>org.jacoco</groupId>-->
+<!--				<artifactId>jacoco-maven-plugin</artifactId>-->
+<!--				<version>0.8.5</version>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<goals>-->
+<!--							<goal>prepare-agent</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--					&lt;!&ndash; attached to Maven test phase &ndash;&gt;-->
+<!--					<execution>-->
+<!--						<id>report</id>-->
+<!--						<phase>test</phase>-->
+<!--						<goals>-->
+<!--							<goal>report</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
+<!--			<plugin>-->
+<!--				<groupId>org.springframework.boot</groupId>-->
+<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--				<configuration>-->
+<!--					<addResources>true</addResources>-->
+<!--					<mainClass>com.massmutual.demo.TutorialApplication</mainClass>-->
+<!--					<layout>ZIP</layout>-->
+<!--				</configuration>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<goals>-->
+<!--							<goal>repackage</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
+
+
+<!--		</plugins>-->
+<!--	</build>-->
 
 </project>

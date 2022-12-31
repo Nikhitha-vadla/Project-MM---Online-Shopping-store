@@ -8,6 +8,7 @@ import com.massmutual.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,14 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
-@RequestMapping("/admin/product")
+@RequestMapping("/product")
 @RestController
-public class ProductController
-{
+public class ProductController {
+
 	@Autowired
 	private ProductService service;
 
-	//ADMIN
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@PostMapping("/save") //, produces = "application/json", consumes = "application/json", method = RequestMethod.POST)
 	public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
 		
@@ -36,21 +37,19 @@ public class ProductController
 		return new ResponseEntity<Product>(saved, HttpStatus.OK);
 	}
 
-	//BOTH
 	@GetMapping("/get/{productId}")
 	public ResponseEntity<Product> getProductById(@PathVariable("productId") Integer productId) {
 		Product product = service.viewProduct(productId);
 		return new ResponseEntity<Product>(product, HttpStatus.OK);
 	}
 
-	//BOTH
 	@GetMapping("/get/all")
 	public ResponseEntity<List<Product>> getAllProducts() {
 		List<Product> productList = service.viewAllProducts();
 		return new ResponseEntity<List<Product>>(productList, HttpStatus.OK);
 	}
 
-	//ADMIN
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@DeleteMapping("/delete/{productId}")
 	public ResponseEntity<Product> deleteProductById(@PathVariable("productId")Integer productId) {
 		Product product= service.removeProductById(productId);
@@ -61,7 +60,7 @@ public class ProductController
 		return new ResponseEntity<Product>(product, HttpStatus.OK);
 	}
 
-	//ADMIN
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@PutMapping("/update")
 	public ResponseEntity<Product> updateProduct(
 			@RequestBody Product product){
@@ -70,12 +69,11 @@ public class ProductController
 		return new ResponseEntity<Product>(products, HttpStatus.OK);
 	}
 
-	//BOTH
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@GetMapping("/get/category/{cname}")
 	ResponseEntity<List<Product>> getProffessorCourse(@PathVariable("cname") String cname){
 		List<Product> rtnObj = service.viewProductsByCategory(cname);
 		
 		return new ResponseEntity<List<Product>>(rtnObj, HttpStatus.OK);
 	}
-	
 }

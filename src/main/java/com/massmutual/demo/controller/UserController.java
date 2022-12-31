@@ -6,6 +6,7 @@ import com.massmutual.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
+    @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping("/delete/{customerID}")
     public String deleteCustomerById(@PathVariable("customerID")Long customerID) {
         userService.deleteCustomerById(customerID);
@@ -30,6 +31,7 @@ public class UserController {
         return new ResponseEntity<User>(updatedUser,HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/get")
     public List<User> fetchCustomerList(){
         return userService.fetchCustomerList();
@@ -42,8 +44,8 @@ public class UserController {
     }
 
     @GetMapping("/get/name/{name}")
-    public ResponseEntity<User> fetchCustomerByName(@PathVariable("name") String name)
-    {
+    public ResponseEntity<User> fetchCustomerByName(@PathVariable("name") String name) {
         return new ResponseEntity<>(userService.fetchCustomerByName(name),HttpStatus.OK);
     }
+
 }

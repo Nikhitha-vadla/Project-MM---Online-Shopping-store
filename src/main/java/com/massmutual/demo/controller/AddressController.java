@@ -21,12 +21,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/customer/address")
+@RequestMapping("/address")
 public class AddressController {
 	
 	@Autowired
 	private AddressService service;
-	
+
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@PostMapping("/save")
 	public Address saveAddress(@RequestBody Address address) {
 		return service.saveAddress(address);
@@ -48,13 +49,14 @@ public class AddressController {
 		return new ResponseEntity(service.fetchAddressById(addressID),HttpStatus.OK);
 	}
 
-	
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@DeleteMapping("/delete/{addressID}")
 	public int deleteAddressById(@PathVariable("addressID")Long addressID) throws AddressNotFoundException{
 
 			return service.deleteAddressById(addressID);
 	}
-	
+
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@PutMapping("/update/{addressID}")
 	public Address updateAddress(@PathVariable("addressID") Long addressID, @RequestBody Address address) throws AddressNotFoundException {
 		return service.updateAddress(addressID, address);
