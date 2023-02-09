@@ -2,11 +2,11 @@ package com.massmutual.demo.service;
 
 import java.util.List;
 
-import com.massmutual.demo.entity.Category;
-import com.massmutual.demo.repository.CategoryRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.massmutual.demo.entity.Category;
+import com.massmutual.demo.repository.CategoryRepository;
 
 @Service
 public class CategoryServiceImpl implements CategoryService{

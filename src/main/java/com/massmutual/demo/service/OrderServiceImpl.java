@@ -3,16 +3,14 @@ package com.massmutual.demo.service;
 import java.util.List;
 import java.util.Objects;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.massmutual.demo.entity.Order;
-import com.massmutual.demo.entity.Product;
-import com.massmutual.demo.entity.User;
 import com.massmutual.demo.repository.AddressRepository;
 import com.massmutual.demo.repository.OrderRepository;
 import com.massmutual.demo.repository.ProductRepository;
-
 import com.massmutual.demo.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 
 @Service("orderService")

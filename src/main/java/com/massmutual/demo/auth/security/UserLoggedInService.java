@@ -1,11 +1,12 @@
 package com.massmutual.demo.auth.security;
 
-import com.massmutual.demo.entity.User;
-import com.massmutual.demo.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+
+import com.massmutual.demo.entity.User;
+import com.massmutual.demo.service.UserServiceImpl;
 
 @Component
 public class UserLoggedInService {

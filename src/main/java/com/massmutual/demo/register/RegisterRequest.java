@@ -1,8 +1,10 @@
 package com.massmutual.demo.register;
 
-import com.massmutual.demo.entity.Address;
-import lombok.Data;
 import java.time.LocalDateTime;
+
+import com.massmutual.demo.entity.Address;
+
+import lombok.Data;
 
 @Data
 public class RegisterRequest {

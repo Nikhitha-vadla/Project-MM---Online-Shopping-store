@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.massmutual.demo.entity.Category;
 import com.massmutual.demo.entity.Product;
 import com.massmutual.demo.repository.CategoryRepository;
 import com.massmutual.demo.repository.ProductRepository;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class ProductServiceImpl implements ProductService {

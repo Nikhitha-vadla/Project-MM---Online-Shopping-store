@@ -1,13 +1,14 @@
 package com.massmutual.demo.register;
 
+import java.time.LocalDateTime;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.massmutual.demo.entity.User;
 import com.massmutual.demo.enums.UserRole;
 import com.massmutual.demo.exceptions.AppException;
 import com.massmutual.demo.service.UserServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
 
 @Service
 public class RegisterService {

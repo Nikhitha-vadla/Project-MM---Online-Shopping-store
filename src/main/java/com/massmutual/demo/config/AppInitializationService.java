@@ -1,17 +1,16 @@
 package com.massmutual.demo.config;
 
-import com.massmutual.demo.entity.Address;
-import com.massmutual.demo.entity.User;
-import com.massmutual.demo.enums.UserRole;
-import com.massmutual.demo.register.RegisterRequest;
-import com.massmutual.demo.register.RegisterService;
-import com.massmutual.demo.service.AddressService;
-import com.massmutual.demo.service.RoleService;
-import com.massmutual.demo.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
+
+import com.massmutual.demo.entity.Address;
+import com.massmutual.demo.enums.UserRole;
+import com.massmutual.demo.register.RegisterRequest;
+import com.massmutual.demo.register.RegisterService;
+import com.massmutual.demo.service.RoleService;
+import com.massmutual.demo.service.UserServiceImpl;
 
 @Component
 public class AppInitializationService implements ApplicationListener<ApplicationReadyEvent> {

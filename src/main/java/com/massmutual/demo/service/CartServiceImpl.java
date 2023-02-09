@@ -2,14 +2,13 @@ package com.massmutual.demo.service;
 
 import java.util.List;
 
-import com.massmutual.demo.entity.Cart;
-import com.massmutual.demo.entity.Product;
-import com.massmutual.demo.entity.User;
-import com.massmutual.demo.repository.CartRepository;
-import com.massmutual.demo.repository.ProductRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.massmutual.demo.entity.Cart;
+import com.massmutual.demo.entity.Product;
+import com.massmutual.demo.repository.CartRepository;
+import com.massmutual.demo.repository.ProductRepository;
 
 @Service
 public class CartServiceImpl implements CartService{

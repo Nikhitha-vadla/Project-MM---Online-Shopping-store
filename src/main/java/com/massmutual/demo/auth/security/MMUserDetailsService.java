@@ -1,7 +1,8 @@
 package com.massmutual.demo.auth.security;
 
-import com.massmutual.demo.entity.User;
-import com.massmutual.demo.service.UserServiceImpl;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,8 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
-import java.util.stream.Collectors;
+import com.massmutual.demo.entity.User;
+import com.massmutual.demo.service.UserServiceImpl;
 
 @Service(value = "MMUserDetailsService")
 public class MMUserDetailsService implements UserDetailsService {

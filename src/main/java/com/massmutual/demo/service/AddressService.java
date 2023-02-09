@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import com.massmutual.demo.entity.Address;
 import com.massmutual.demo.exceptions.AddressNotFoundException;
-import com.massmutual.demo.exceptions.NoRecordFoundException;
 
 
 public interface AddressService {

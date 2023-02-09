@@ -1,11 +1,13 @@
 package com.massmutual.demo.service;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
 import com.massmutual.demo.entity.Role;
 import com.massmutual.demo.entity.User;
 import com.massmutual.demo.enums.UserRole;
 import com.massmutual.demo.register.RegisterRequest;
-
-import java.util.*;
 
 public interface UserService {
 
